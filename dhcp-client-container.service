@@ -1,0 +1,6 @@
+[Unit]
+Description=A DHCP client (dhclient)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker run -d --net=host --cap-add=net_admin -e INTERFACE=enp0s25 --name dhcp-client-container dhcp-client-container
