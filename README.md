@@ -6,6 +6,12 @@
 A **DHCP client container** running as a **root user** based on **Fedora 25**. 
 
 
+## Running as a standalone container
+
+```
+$ systemctl start dhcp-client-container
+```
+
 ## Running in Docker
 
 ```
