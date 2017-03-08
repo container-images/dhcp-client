@@ -1,0 +1,5 @@
+[dhcp-module]
+name=A dhcp module
+baseurl=https://karsten.fedorapeople.org/dhcp-module-repo/
+enabled=1
+gpgcheck=0
