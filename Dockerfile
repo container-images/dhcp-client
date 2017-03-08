@@ -20,7 +20,7 @@ RUN dnf -y --best --allowerasing install dhcp-client && \
     chmod 755 /usr/sbin/rundhcp.sh && \
     chown daemon.daemon /var/lib/dhclient
 
-ENV INTERFACE=enp0s25
+ENV INTERFACE=""
 USER 0
 CMD ["/usr/sbin/rundhcp.sh"]
 

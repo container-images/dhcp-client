@@ -1,4 +1,4 @@
 #!/bin/bash
 
-/usr/sbin/dhclient -v $INTERFACE
+/usr/sbin/dhclient $INTERFACE
 
