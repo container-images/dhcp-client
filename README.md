@@ -9,7 +9,7 @@ A **DHCP client container** running as a **root user** based on **Fedora 25**.
 ## Running in Docker
 
 ```
-$ docker run --net=host --cap_add=net_admin docker.io/khopp/dhcp
+$ docker run --net=host --cap_add=net_admin dhcp-client-container
 ```
 
 ## Running in OpenShift
