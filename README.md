@@ -41,8 +41,10 @@ oc login -u developer
 oc create -f openshift-template.yml
 ```
 
-Limitations:
+Notes:
 This container needs to be run with "--net=host --cap_add=net_admin" so that the network devices of the host are visible inside the container and can be configured.
 
 dhclient will attempt to configure all network interfaces unless an INTERFACE variable containing the names of the interfaces to use is supplied on the docker commandline.
 In the standalone container usecase the means that the file /usr/lib/systemd/system/dhcp-client-container.service needs to be edited.
+
+This dhcp-client container doesn't require NetworkManager to be able to set IP adresses, which minimizes the the package requirements and the  memory footprint but makes configuration somewhat harder.
