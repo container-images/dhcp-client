@@ -17,9 +17,9 @@ $ systemctl start dhcp-client-container
 ```
 $ docker run --net=host --cap_add=net_admin dhcp-client-container
 ```
-or
+or, if only a defined list of interfaces should be configured be dhclient:
 ```
-$ docker run --net=host --cap_add=net_admin -e INTERFACE=enp0s25 dhcp-client-container
+$ docker run --net=host --cap_add=net_admin -e INTERFACE="enp0s25 wlan0" dhcp-client-container
 ```
 
 ## Running in OpenShift
