@@ -14,7 +14,6 @@ LABEL name="DHCP client container" \
 ADD dhcp-module.repo /etc/yum.repos.d/dhcp-module.repo
 ADD files/rundhcp.sh /usr/sbin/rundhcp.sh
 
-#RUN dnf -y --best --allowerasing install dbus strace net-tools iproute dhcp-client
 RUN dnf -y --best --allowerasing install dhcp-client && \
     dnf clean all && \
     chmod 755 /usr/sbin/rundhcp.sh && \
