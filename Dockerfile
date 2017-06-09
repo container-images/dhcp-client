@@ -14,7 +14,7 @@ ENV NAME=dhcp-client \
     VERSION=1.0 \
     RELEASE=1 \
     ARCH=x86_64 \
-    INTERFACE=""
+    INTERFACES=""
 
 LABEL summary="Provides the ISC DHCP client daemon" \
       name="$FGC/$NAME" \
