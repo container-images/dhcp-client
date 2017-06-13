@@ -3,7 +3,7 @@
 
 ## Description
 
-A **DHCP client container** running as a **root user** based on **Fedora 25**. 
+A **DHCP client container** running as a **root user** based on **Base Runtime**. 
 
 
 ## Running as a standalone container
