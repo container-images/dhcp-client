@@ -32,8 +32,6 @@ LABEL summary="Provides the ISC DHCP client daemon" \
 
 ADD files/rundhcp.sh /usr/sbin/rundhcp.sh
 
-COPY root/help.1 /
-
 # initscripts: for /etc/sysconfig/network-scripts
 RUN INSTALL_PKGS="dhcp-client initscripts" && \
     microdnf -y install $INSTALL_PKGS && \
@@ -42,5 +40,8 @@ RUN INSTALL_PKGS="dhcp-client initscripts" && \
     chmod 755 /usr/sbin/rundhcp.sh && \
     chown daemon.daemon /var/lib/dhclient
 
+COPY root/help.1 /
+
 USER 0
+
 CMD ["/usr/sbin/rundhcp.sh"]

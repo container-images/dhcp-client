@@ -3,7 +3,7 @@
 
 ## Description
 
-A **DHCP client container** running as a **root user** based on **Base Runtime**. 
+A **DHCP client container** running as a **root user** based on **Fedora 26 Boltron**. 
 
 
 ## Running as a standalone container

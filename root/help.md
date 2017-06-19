@@ -6,14 +6,10 @@
 dhcp-client - Dynamic Host Configuration Protocol Client
 
 # DESCRIPTION
-A DHCP client container running as a root user based on Base Runtime. Provides a means for configuring one or more network interfaces using DHCP.
+A DHCP client container running as a root user based on Fedora 26 Boltron. Provides a means for configuring one or more network interfaces using DHCP.
 
 # USAGE
-This container can be run as a service by running:
-
-	# systemctl start dhcp-client-container
-
-For runnning in docker use:
+For running in docker use:
 
 	# docker run --net=host --cap_add=net_admin dhcp-client-container
 
