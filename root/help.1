@@ -25,7 +25,9 @@ For running in docker use:
 .RE
 
 .PP
-If you want to run this in openshift, you need to have SCC RunAsUser set to RunAsAny. Then run:
+Openshift template can be obtained through github repository \- 
+\[la]https://github.com/container-images/dhcp-client\[ra]
+If you want to run this in Openshift, you need to have SCC RunAsUser set to RunAsAny. Then run:
 
 .PP
 .RS
@@ -42,11 +44,11 @@ By default, this container will try to configure all available interfaces, unles
 
 .SH ENVIRONMENT VARIABLES
 .PP
-You can define following enviroment variables using docker option \-e:
+You can define following environment variables using docker option \-e:
 
 .PP
 INTERFACES="enp0s25 wlan0"
-                A list of intefaces to be configured. otherwise all available interfaces will be configured
+    A list of intefaces to be configured. otherwise all available interfaces will be configured
 
 
 .SH SECURITY IMPLICATIONS
@@ -55,11 +57,11 @@ Both of these options are needed for running this container:
 
 .PP
 \-\-net=host
-     Uses host network stack.
+    Uses host network stack.
 
 .PP
 \-\-cap\_add=net\_admin
-     Allows container to modify network devices.
+    Allows container to modify network devices.
 
 .PP
 This container also needs to run as root user.
