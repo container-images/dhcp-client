@@ -1,0 +1,73 @@
+.TH "DHCP-CLIENT " "1" " Container Image Pages" "Karsten Hopp" "June 13, 2017"  ""
+
+
+.SH NAME
+.PP
+dhcp\-client \- Dynamic Host Configuration Protocol Client
+
+
+.SH DESCRIPTION
+.PP
+A DHCP client container running as a root user based on Fedora 26 Boltron. Provides a means for configuring one or more network interfaces using DHCP.
+
+
+.SH USAGE
+.PP
+For running in docker use:
+
+.PP
+.RS
+
+.nf
+# docker run \-\-net=host \-\-cap\_add=net\_admin dhcp\-client\-container
+
+.fi
+.RE
+
+.PP
+Openshift template can be obtained through github repository \- 
+\[la]https://github.com/container-images/dhcp-client\[ra]
+If you want to run this in Openshift, you need to have SCC RunAsUser set to RunAsAny. Then run:
+
+.PP
+.RS
+
+.nf
+# oc create \-f openshift\-template.yml
+
+.fi
+.RE
+
+.PP
+By default, this container will try to configure all available interfaces, unless enviroment variable INTERFACES is set.
+
+
+.SH ENVIRONMENT VARIABLES
+.PP
+You can define following environment variables using docker option \-e:
+
+.PP
+INTERFACES="enp0s25 wlan0"
+    A list of intefaces to be configured. otherwise all available interfaces will be configured
+
+
+.SH SECURITY IMPLICATIONS
+.PP
+Both of these options are needed for running this container:
+
+.PP
+\-\-net=host
+    Uses host network stack.
+
+.PP
+\-\-cap\_add=net\_admin
+    Allows container to modify network devices.
+
+.PP
+This container also needs to run as root user.
+
+
+.SH SEE ALSO
+.PP
+Github page for this container with detailed description: 
+\[la]https://github.com/container-images/dhcp-client\[ra]

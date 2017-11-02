@@ -30,8 +30,6 @@ LABEL summary="Provides the ISC DHCP client daemon" \
       io.k8s.description="A container with the DHCP client" \
       io.k8s.display-name="DHCP client (dhclient)"
 
-
-#ADD dhcp-module.repo /etc/yum.repos.d/dhcp-module.repo
 ADD files/rundhcp.sh /usr/sbin/rundhcp.sh
 
 # initscripts: for /etc/sysconfig/network-scripts
@@ -42,5 +40,8 @@ RUN INSTALL_PKGS="dhcp-client initscripts" && \
     chmod 755 /usr/sbin/rundhcp.sh && \
     chown daemon.daemon /var/lib/dhclient
 
+COPY root/help.1 /
+
 USER 0
+
 CMD ["/usr/sbin/rundhcp.sh"]
